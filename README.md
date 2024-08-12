@@ -75,6 +75,8 @@ Besides, there are numerous categorical variables:
 
 First of all, I want to make sure that **all** statistics (HP,ATK,DEF, REDEPLOY, DP_COST, BLOCK, INTERVAL) are **INTEGERS** (quantitative variables), as well as **all** categorical variables (class, branch, availability, race, stars, position, gender, ...) are **CHARACTERS**. 
 
+<h3>1. Base check</h3>
+
 ```r
 base_stats <- df %>% 
   select(base_hp, base_atk, base_def, base_res, base_redeploy, base_dp_cost, base_block, base_block, base_interval)
@@ -82,17 +84,17 @@ base_stats <- df %>%
 base_check <- sapply(base_stats, class)
 
 ```
-Base statistics class :
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/d5beef61-4344-40a8-b379-c1edade1fb73" alt="Base check"/>
-</div>
+![image](https://github.com/user-attachments/assets/bba497f6-256c-4981-a110-b2b4d85a1ca9)
+
 <br>
 
 <p> As you can see, it is strikingly visible that the base_redeploy and ase_interval are mistakenly saved as **characters** values. I will convert it into integers later on. 
   
   Before that, let's have a look at Elite_1, Elite_2, and max statistics to make sure that all these stats are correctly saved as integers. 
 </p>
+
+<h3>2. Elite 1 check</h3>
 
 ```r
 #Check class : elite 1
@@ -103,6 +105,13 @@ elite_1_stats <- df %>%
 elite_1_check <- sapply(elite_1_stats, class)
 
 ```
+![image](https://github.com/user-attachments/assets/60d03bf6-55a2-40c8-8ee8-918c1d409d1f)
+
+
+
+
+<h3>3. Elite 2 check</h3>
+
 ```r
 #Check class : elite 2
 elite_2_stats <- df %>% 
@@ -112,6 +121,11 @@ elite_2_stats <- df %>%
 elite_2_check <- sapply(elite_2_stats, class)
 
 ```
+![image](https://github.com/user-attachments/assets/ce00ee06-7bbd-4d78-b22a-0d32a233f81d)
+
+
+<h3>4. Max check</h3>
+
 ```r
 #Check class : max
 max_stats <- df %>% 
@@ -120,6 +134,10 @@ max_stats <- df %>%
 
 max_check <- sapply(max_stats, class)
 ```
+![image](https://github.com/user-attachments/assets/ae3ac609-7c7f-4454-8c00-e1fbf6d315be)
+
+
+
 
 
 
