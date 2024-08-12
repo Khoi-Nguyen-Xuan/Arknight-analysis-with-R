@@ -380,8 +380,9 @@ According to the graph, while <b>Guard</b> and <b>Specialist</b> possess a great
 
 ![Rplot](https://github.com/user-attachments/assets/cf759f5b-6793-4a59-9ee9-bff348b468c8)
 
+<br></br>
 ## Scatterplot for relationship analysis (with Pearson correlation coefficient)
-<h4> 1. Def and res analysis </h4>
+<h3> 1. Def and res analysis </h3>
 In Arknights
 - <b>Res (Resistance)</b> reduces the impact of <b>magical damage</b> from enemies, making operators more resilient against magic-based attacks. 
 - <b>Def (Defense)</b> lowers <b>physical damage</b> taken, enhancing an operator's durability against physical assaults.
@@ -410,9 +411,12 @@ We can confidently predict that the <b> correlation </b> between base res and ba
 correlation <- cor(df$base_res, df$base_def, method = "pearson")
 ```
 
-![image](https://github.com/user-attachments/assets/5a8a50f6-bf8c-477e-8ddb-922f25bee74e)
+![image](https://github.com/user-attachments/assets/7a8fb25d-bf79-406f-a8f0-09f0b53be8d0)
+
 
 Since the pearson correlation coefficient is only -0.1 (near 0), it is statistically confident to say base res and base def <b> are not correlated </b>. Also, it is worth mentioning that while <b> every operators </b> has base def, many of them <b> do not </b> have base res, which means operators with art resistance <b> are rare </b> 
+
+
 
 Notice that there is a <b>very extreme outlier</b> int this scatterplot. I will use <b>annotate()</b> with text, rect and arrow to hightlight the outlier plot
 
