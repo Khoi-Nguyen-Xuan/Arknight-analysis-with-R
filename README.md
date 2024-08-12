@@ -288,6 +288,10 @@ outlier_baseATK<- df %>%
 
 ![image](https://github.com/user-attachments/assets/33963448-e457-43af-81ef-421e4ccd7688)
 
+<br></br>
+## Multiple bar charts for branches
+Each class in Arknights is divided into several <b> branches </b> (can be seen as subclass), with each branch providing distinct features that cater to different tactical needs. These branches allow operators to evolve into specialized units, enhancing their effectiveness in various scenarios and adding significant strategic depth to the game's gameplay. 
+Let's graph 'em up! 
 
 
 
