@@ -383,11 +383,11 @@ According to the graph, while <b>Guard</b> and <b>Specialist</b> possess a great
 <br></br>
 ## Scatterplot for relationship analysis (with Pearson correlation coefficient)
 <h3> 1. Def and res analysis </h3>
-In Arknights 
-<br>
+
+In Arknights : 
 - <b>Res (Resistance)</b> reduces the impact of <b>magical damage</b> from enemies, making operators more resilient against magic-based attacks. 
-<br>
 - <b>Def (Defense)</b> lowers <b>physical damage</b> taken, enhancing an operator's durability against physical assaults.
+
 
 <br></br>
 Since we want to analyse the relationship (correlation) between two quantitative variables, scatterplot is a great choice! 
