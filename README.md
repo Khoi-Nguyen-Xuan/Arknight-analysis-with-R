@@ -285,6 +285,8 @@ outlier_baseATK_defender <- df %>%
   select(name, class, base_atk)
 ```
 
+![image](https://github.com/user-attachments/assets/47bbf00a-ad26-4736-8504-947186132959)
+
 
 
 
