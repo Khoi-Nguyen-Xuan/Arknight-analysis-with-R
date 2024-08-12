@@ -394,7 +394,12 @@ g+ annotate("rect", xmin = 340, xmax = 368, ymin = 48, ymax = 52, alpha = 0.3, c
   annotate("text", label = "Outlier", x = 280, y = 40, color = "red",size = 5)+
   annotate("curve", x = 280, y = 41.5, xend = 335, yend = 50, linewidth = 1, curvature = -0.3, arrow = arrow(length = unit(0.5,'cm')))
 ```
-![image](https://github.com/user-attachments/assets/30c629a4-d179-4548-987f-d1017cab66f1)
+<div align="center">
+<img src="https://github.com/user-attachments/assets/a4e7a833-032e-4527-92ee-b1b8b2a846cb" width = "800" height = "600"/>
+</div>
+
+
+
 
 By using dplyr to filter out, we now know that this outlier belongs to <b>THRM-EX </b>, with <b>base def </b> = 50 and <b>base ref </b> = 354. 
 ```r
