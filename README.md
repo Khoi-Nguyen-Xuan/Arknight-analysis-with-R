@@ -290,15 +290,93 @@ outlier_baseATK<- df %>%
 
 <br></br>
 ## Multiple bar charts for branches
+<h4> Branch terminology </h4>
 Each class in Arknights is divided into several <b> branches </b> (can be seen as subclass), with each branch providing distinct features that cater to different tactical needs. These branches allow operators to evolve into specialized units, enhancing their effectiveness in various scenarios and adding significant strategic depth to the game's gameplay. 
+For instance, 
 <br></br> 
-Let's graph 'em up! 
+
+<h4> Multiple bar charts</h4>
+
+First, I used dplyr and ggplot to draw seperate individual bar charts for each class. Then, I have implemented the <b>grid.arrange() </b> from <b>gridExtra</b> library to display multiple bar charts in one frame. This give a comprehensive clearer obseravation how each class distribute their branches. 
+
+```r
+defender <- df %>%
+  filter(class == "Defender") %>%
+  ggplot(aes(x = branch))+
+  geom_bar(fill = "#FBB4AE")+
+  xlab("Defender")+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+
+caster <- df %>%
+  filter(class == "Caster") %>%
+  ggplot(aes(x = branch))+
+  geom_bar(fill = "#B3CDE3")+
+  xlab("Caster")+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+
+
+guard <- df %>%
+  filter(class == "Guard") %>%
+  ggplot(aes(x = branch))+
+  geom_bar(fill = "#CCEBC5")+
+  xlab("Guard")+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+
+
+medic <- df %>%
+  filter(class == "Medic") %>%
+  ggplot(aes(x = branch))+
+  geom_bar(fill = "#DECBE4")+
+  xlab("Medic")+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+
+sniper <- df %>%
+  filter(class == "Sniper") %>%
+  ggplot(aes(x = branch))+
+  geom_bar(fill = "#FED9A6")+
+  xlab("Sniper")+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+
+specialist <- df %>%
+  filter(class == "Specialist") %>%
+  ggplot(aes(x = branch))+
+  geom_bar(fill = "#E5D8BD")+
+  xlab("Specialist")+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+
+supporter <- df %>%
+  filter(class == "Supporter") %>%
+  ggplot(aes(x = branch))+
+  geom_bar(fill = "#FDDAEC")+
+  xlab("Supporter")+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+
+vanguard <- df %>%
+  filter(class == "Vanguard") %>%
+  ggplot(aes(x = branch))+
+  geom_bar(fill = "#9ECAE1")+
+  xlab("Vanguard")+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+
+#Combine all 8 bar charts by gridExtra
+g <- grid.arrange(defender,caster, guard, medic, sniper, specialist,
+                  supporter, vanguard, nrow=4, 
+                  top = textGrob("Branch by class", gp = gpar(fontsize = 20, font = 2)))
+```
 
 
 ![Rplot](https://github.com/user-attachments/assets/cf759f5b-6793-4a59-9ee9-bff348b468c8)
 
 
-
+According to the graph, while <b>Guard</b> and <b>Specialist</b> 
 
 
 
