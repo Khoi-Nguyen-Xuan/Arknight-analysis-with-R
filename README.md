@@ -400,8 +400,8 @@ g+ annotate("rect", xmin = 340, xmax = 368, ymin = 48, ymax = 52, alpha = 0.3, c
 
 
 
-
-By using dplyr to filter out, we now know that this outlier belongs to <b>THRM-EX </b>, with <b>base def </b> = 50 and <b>base ref </b> = 354. 
+<br></br> 
+By using dplyr to filter out, we know that this outlier belongs to <b>THRM-EX </b>, with <b>base def </b> = 50 and <b>base ref </b> = 354. 
 ```r
 outlier <- df%>%
   filter(base_def>300) %>%
