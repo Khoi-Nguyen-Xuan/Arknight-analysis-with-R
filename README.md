@@ -388,8 +388,6 @@ In Arknights :
 - <b>Res (Resistance)</b> reduces the impact of <b>magical damage</b> from enemies, making operators more resilient against magic-based attacks. 
 - <b>Def (Defense)</b> lowers <b>physical damage</b> taken, enhancing an operator's durability against physical assaults.
 
-
-<br></br>
 Since we want to analyse the relationship (correlation) between two quantitative variables, scatterplot is a great choice! 
 
 ```r
