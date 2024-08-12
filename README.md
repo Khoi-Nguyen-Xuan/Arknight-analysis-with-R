@@ -297,7 +297,11 @@ For instance,
 
 <h4> Multiple bar charts</h4>
 
-First, I used dplyr and ggplot to draw seperate individual bar charts for each class. Then, I have implemented the <b>grid.arrange() </b> from <b>gridExtra</b> library to display multiple bar charts in one frame. This give a comprehensive clearer obseravation how each class distribute their branches. 
+First, I used **dplyr** and** ggplot** to draw seperate individual bar charts for each class. Then, I have implemented the <b>grid.arrange() </b> from <b>gridExtra</b> library to display multiple bar charts in one frame. This give a comprehensive clearer obseravation how each class distribute their branches. 
+
+For instance, the <b>Caster class</b> features two main branches: <b>Core</b> and <b>Splash</b>. The <b>Core</b> branch focuses on high single-target magical damage, excelling in dealing significant damage to individual enemies. In contrast, the <b>Splash</b> branch specializes in area-of-effect (AoE) magic attacks, allowing operators to inflict damage on multiple enemies within a specified area. 
+
+This makes the <b>Core</b> branch ideal for taking down **high-priority** targets, while the **Splash** branch is more suited for managing **large groups of foes**.
 
 ```r
 defender <- df %>%
@@ -372,11 +376,13 @@ g <- grid.arrange(defender,caster, guard, medic, sniper, specialist,
                   top = textGrob("Branch by class", gp = gpar(fontsize = 20, font = 2)))
 ```
 
+<br> </br>
+According to the graph, while <b>Guard</b> and <b>Specialist</b> possess a great number of branches, <b>Medic</b> and <b>Vanguard </b> both only have 4 branches. The number of branches ranges from 4 to 10 among 8 classes. In total, there are 52 branches among 8 classes, which indicates a great variability of possible combination! 
 
 ![Rplot](https://github.com/user-attachments/assets/cf759f5b-6793-4a59-9ee9-bff348b468c8)
 
 
-According to the graph, while <b>Guard</b> and <b>Specialist</b> 
+
 
 
 
