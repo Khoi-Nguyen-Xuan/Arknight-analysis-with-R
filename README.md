@@ -192,7 +192,6 @@ View(categorical_check)
 Fortunately, they are! 
 <br></br>
 ![image](https://github.com/user-attachments/assets/0ba76012-99a5-4633-8453-9ef4f14c9e87)
-<br> 
 
 <br></br>
 ## Heatmap analysis
