@@ -82,6 +82,14 @@ base_stats <- df %>%
 base_check <- sapply(base_stats, class)
 View(base_check)
 ```
+Base statistics class :
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/d5beef61-4344-40a8-b379-c1edade1fb73" alt="Base check"/>
+</div>
+<br>
+As you can see, it is strikingly visible that the **base_redeploy** and **base_interval** are mistakenly saved as **characters** values. I will convert it into integers later on. Before that, let's have a look at Elite_1, Elite_2, and max statistics to make sure that all these stats are correctly saved as integers. 
+
 
 
 
