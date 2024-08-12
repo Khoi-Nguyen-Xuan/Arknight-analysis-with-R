@@ -381,6 +381,11 @@ According to the graph, while <b>Guard</b> and <b>Specialist</b> possess a great
 
 ![Rplot](https://github.com/user-attachments/assets/cf759f5b-6793-4a59-9ee9-bff348b468c8)
 
+## Scatterplot for relationship analysis
+<h4> Def and res analysis </h4>
+In Arknights
+- <b>Res (Resistance)</b> reduces the impact of <b>magical damage</b> from enemies, making operators more resilient against magic-based attacks. 
+- <b>Def (Defense)</b> lowers <b>physical damage</b> taken, enhancing an operator's durability against physical assaults.
 
 
 
