@@ -19,6 +19,7 @@
 - [About](#about)
 - [Motivation](#motivation)
 - [Dataset](#dataset)
+- [Data preprocessing](#Cleaning) 
 - [Heatmap for correlation analysis](#heatmap)
 - [Boxplot for comparison](#Boxplot)
 - [Multiple bar charts for summary](#BarCharts)
@@ -69,4 +70,20 @@ Besides, there are numerous categorical variables:
 - **Endurance, Combat skill, tactical acumen**: Flawed, Standard, Normal, Excellence
 - **Mobility**: Flawed, Standard, Normal, Excellence 
 - **Infection status**
+
+## Data preprocessing 
+
+First of all, I want to make sure that **all** statistics (HP,ATK,DEF, REDEPLOY, DP_COST, BLOCK, INTERVAL) are **INTEGERS** (quantitative variables), as well as **all** categorical variables (class, branch, availability, race, stars, position, gender, ...) are **CHARACTERS**. 
+
+```r
+base_stats <- df %>% 
+  select(base_hp, base_atk, base_def, base_res, base_redeploy, base_dp_cost, base_block, base_block, base_interval)
+
+base_check <- sapply(base_stats, class)
+View(base_check)
+```
+
+
+
+
 
