@@ -281,12 +281,13 @@ Yet, there are several outliers in <b>Defender</b> and <b>Guard</b> class, indic
 Let's find out who they are 
 
 ```r
-outlier_baseATK_defender <- df %>%
-  filter(class == "Defender", base_atk > 400) %>% 
+outlier_baseATK<- df %>%
+  filter(class == "Defender" | class == "Guard", base_atk > 400) %>% 
   select(name, class, base_atk)
 ```
 
-![image](https://github.com/user-attachments/assets/bc8543ac-cabe-41c6-8b50-8249bd05779c)
+![image](https://github.com/user-attachments/assets/33963448-e457-43af-81ef-421e4ccd7688)
+
 
 
 
