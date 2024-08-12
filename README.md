@@ -382,11 +382,12 @@ According to the graph, while <b>Guard</b> and <b>Specialist</b> possess a great
 ![Rplot](https://github.com/user-attachments/assets/cf759f5b-6793-4a59-9ee9-bff348b468c8)
 
 ## Scatterplot for relationship analysis
-<h4> Def and res analysis </h4>
+<h4> 1. Def and res analysis </h4>
 In Arknights
 - <b>Res (Resistance)</b> reduces the impact of <b>magical damage</b> from enemies, making operators more resilient against magic-based attacks. 
 - <b>Def (Defense)</b> lowers <b>physical damage</b> taken, enhancing an operator's durability against physical assaults.
 
+<br>
 Since we want to analyse the relationship (correlation) between two quantitative variables, scatterplot is a great choice! 
 
 ```r
@@ -403,6 +404,7 @@ ggplot(df, aes(x = base_def, y = base_res))+
 <img src="https://github.com/user-attachments/assets/00afb594-bd7b-4bd7-8960-74cf34ccaa82" width = "800" height = "600"/>
 </div>
 
+<br>
 
 Notice that there is a very extreme outlier int this scatterplot. I will use annotate() with text, rect and arrow to hightlight the outlier plot
 
