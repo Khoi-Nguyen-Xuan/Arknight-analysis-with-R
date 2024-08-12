@@ -414,9 +414,9 @@ correlation <- cor(df$base_res, df$base_def, method = "pearson")
 ![image](https://github.com/user-attachments/assets/7a8fb25d-bf79-406f-a8f0-09f0b53be8d0)
 
 
-Since the pearson correlation coefficient is only -0.1 (near 0), it is statistically confident to say base res and base def <b> are not correlated </b>. Also, it is worth mentioning that while <b> every operators </b> has base def, many of them <b> do not </b> have base res, which means operators with art resistance <b> are rare </b> 
+Since the pearson correlation coefficient is only <b> -0.1 (near 0) </b>, it is statistically confident to say base res and base def <b> are not correlated </b>. Also, it is worth mentioning that while <b> every operators </b> has base def, many of them <b> do not </b> have base res, which means operators with art resistance <b> are rare </b> 
 
-
+<br></br>
 
 Notice that there is a <b>very extreme outlier</b> int this scatterplot. I will use <b>annotate()</b> with text, rect and arrow to hightlight the outlier plot
 
