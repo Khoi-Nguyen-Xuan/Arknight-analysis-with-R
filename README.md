@@ -1,6 +1,6 @@
 <div align="center">
 <img src="https://thathashtagshow.com/wp-content/uploads/2023/09/maxresdefault-1-1280x640.jpg" alt="Arknight cover image"/>
-<h1>Arknights analysis </h1>
+<h1>Arknights operators analysis </h1>
 <p>
   An R program with tidyverse to analyze a dataset of all operators in <strong><a href="https://desired-link.com">Arknights Mobile Game</a></strong>
 </p>
