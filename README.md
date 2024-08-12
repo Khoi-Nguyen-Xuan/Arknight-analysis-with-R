@@ -42,6 +42,7 @@ Arknights features a large and diverse roster of operators, each with unique sta
 <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2020/08/Operators-and-star-rank-in-Arknights.jpg" alt="Arknight operators"/>
 <i><br>Arknights operators</br></i>
 </div> 
+<br> 
 
 Therefore, I believe a thorough statistical analysis can reveal these patterns and provide insights into how different operators compare and contribute to gameplay, enhancing our understanding of the game's mechanics and balance.
 
@@ -89,7 +90,7 @@ base_check <- sapply(base_stats, class)
 
 <br>
 
-<p> As you can see, it is strikingly visible that the base_redeploy and ase_interval are mistakenly saved as **characters** values. I will convert it into integers later on. 
+<p> As you can see, it is strikingly visible that the <b>base_redeploy</b> and <b>base_interval</b> are mistakenly saved as <b>characters</b> values. I will convert it into <b>integers</b> later on. 
   
   Before that, let's have a look at Elite_1, Elite_2, and max statistics to make sure that all these stats are correctly saved as integers. 
 </p>
@@ -135,6 +136,48 @@ max_stats <- df %>%
 max_check <- sapply(max_stats, class)
 ```
 ![image](https://github.com/user-attachments/assets/ae3ac609-7c7f-4454-8c00-e1fbf6d315be)
+
+<h3>5. Converting data types</h3>
+It is clear that while all elite 1 stats are perfectly saved as integers (whooray!), the entire elite 2 stats and max stats are mistakenly saved as characters! Therefore, I will use <b>Dplyr</b> to mutate the data type of these variables. 
+<br>
+
+```r
+#Variables to convert
+conversion_map <- list(
+  base_redeploy = "base_redeploy",
+  base_interval = "base_interval",
+  elite_1_redeploy = "elite_1_redeploy",
+  elite_1_interval = "elite_1_interval",
+  elite_2_hp = "elite_2_hp",
+  elite_2_atk = "elite_2_atk",
+  elite_2_def = "elite_2_def",
+  elite_2_res = "elite_2_res",
+  elite_2_redeploy = "elite_2_redeploy",
+  elite_2_interval = "elite_2_interval",
+  elite_2_block = "elite_2_block",
+  elite_2_dp_cost = "elite_2_dp_cost",
+  max_hp = "max_hp",
+  max_atk = "max_atk",
+  max_def = "max_def",
+  max_res = "max_res",
+  max_redeploy = "max_redeploy",
+  max_interval = "max_interval",
+  max_block = "max_block",
+  max_dp_cost = "max_dp_cost"
+)
+
+#Apply the conversion through mutate() and as.interger() 
+df <- df %>%
+  mutate(across(
+    all_of(names(conversion_map)), 
+    ~ as.integer(.)
+  ))
+```
+
+You can see that the data type of these variables are finally fixed!
+
+![image](https://github.com/user-attachments/assets/2bb0f128-04ff-40fb-8d5c-2b0a8bb2c32c)
+
 
 
 
