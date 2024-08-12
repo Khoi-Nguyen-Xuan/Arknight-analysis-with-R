@@ -80,7 +80,7 @@ base_stats <- df %>%
   select(base_hp, base_atk, base_def, base_res, base_redeploy, base_dp_cost, base_block, base_block, base_interval)
 
 base_check <- sapply(base_stats, class)
-View(base_check)
+
 ```
 Base statistics class :
 
@@ -88,9 +88,38 @@ Base statistics class :
   <img src="https://github.com/user-attachments/assets/d5beef61-4344-40a8-b379-c1edade1fb73" alt="Base check"/>
 </div>
 <br>
-As you can see, it is strikingly visible that the **base_redeploy** and **base_interval** are mistakenly saved as **characters** values. I will convert it into integers later on. Before that, let's have a look at Elite_1, Elite_2, and max statistics to make sure that all these stats are correctly saved as integers. 
 
+<p> As you can see, it is strikingly visible that the base_redeploy and ase_interval are mistakenly saved as **characters** values. I will convert it into integers later on. 
+  
+  Before that, let's have a look at Elite_1, Elite_2, and max statistics to make sure that all these stats are correctly saved as integers. 
+</p>
 
+```r
+#Check class : elite 1
+elite_1_stats <- df %>% 
+  select(elite_1_hp, elite_1_atk, elite_1_def, elite_1_res, elite_1_redeploy, elite_1_dp_cost, 
+         elite_1_block, elite_1_block, elite_1_interval)
+
+elite_1_check <- sapply(elite_1_stats, class)
+
+```
+```r
+#Check class : elite 2
+elite_2_stats <- df %>% 
+  select(elite_2_hp, elite_2_atk, elite_2_def, elite_2_res, elite_2_redeploy, elite_2_dp_cost, 
+         elite_2_block, elite_2_block, elite_2_interval)
+
+elite_2_check <- sapply(elite_2_stats, class)
+
+```
+```r
+#Check class : max
+max_stats <- df %>% 
+  select(max_hp, max_atk, max_def, max_res, max_redeploy, max_dp_cost, 
+         max_block, max_block, max_interval)
+
+max_check <- sapply(max_stats, class)
+```
 
 
 
