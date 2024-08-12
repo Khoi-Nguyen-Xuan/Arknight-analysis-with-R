@@ -405,6 +405,15 @@ ggplot(df, aes(x = base_def, y = base_res))+
 
 <br>
 
+We can confidently predict that the <b> correlation </b> between base res and base def is <b> pretty low </b>. To statistically prove this, a pearson correlation point is implemented: 
+
+```r
+correlation <- cor(df$base_res, df$base_def, method = "pearson")
+```
+![image](https://github.com/user-attachments/assets/5a8a50f6-bf8c-477e-8ddb-922f25bee74e)
+
+
+
 Notice that there is a <b>very extreme outlier</b> int this scatterplot. I will use <b>annotate()</b> with text, rect and arrow to hightlight the outlier plot
 
 ```r
