@@ -40,7 +40,7 @@ Arknights features a large and diverse roster of operators, each with unique sta
 <div align="center">
 <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2020/08/Operators-and-star-rank-in-Arknights.jpg" alt="Arknight operators"/>
 <i><br>Arknights operators</br></i>
-</div> <br></br>
+</div> 
 
 Therefore, I believe a thorough statistical analysis can reveal these patterns and provide insights into how different operators compare and contribute to gameplay, enhancing our understanding of the game's mechanics and balance.
 
