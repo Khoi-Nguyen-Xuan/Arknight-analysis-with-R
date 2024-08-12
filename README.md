@@ -235,7 +235,7 @@ I did also add <b> "position" </b>, which is another categorical variable, throu
 Boxplots are implemented to compare the qualitative variables (base, elite_1, elite_2, max) among all eight class of operators. 
 
 <h4>1. Base health comparison </h4>
-I reorder the order of class regarding to their base_hp, so that the pattern is easier to recognized. 
+I reorder the order of 8 classes regarding to their mean base_hp, thus the pattern is easier to recognized. 
 
 ```r
 ggplot(df, aes(x = reorder(class,base_hp,mean), y = base_hp))+
@@ -252,10 +252,10 @@ ggplot(df, aes(x = reorder(class,base_hp,mean), y = base_hp))+
 <img src="https://github.com/user-attachments/assets/7660b7d9-e95b-4230-bec7-56bc078bebc9" width = "900"/>
 </div>
 
-It is reasonable that defender and guard are the two classes with highest base_hp. However, I notice some outliers in the Caster class, which I will point out later on. 
+It is reasonable that <b>defender</b> and <b>guard</b> are the two classes with highest base_hp. However, there are some striking outliers in the <b>Caster</b> class, which I will point out later on. 
 
 <h4>2. Base attack comparison </h4>
-Now let's take a look at the base atk between 8 classes. 
+Now, let's take a look at then comparison of base_atk between 8 classes. 
 
 ```r
 ggplot(df, aes(x = reorder(class,base_atk,median), y = base_atk))+
@@ -272,6 +272,11 @@ ggplot(df, aes(x = reorder(class,base_atk,median), y = base_atk))+
 <div align="center">
 <img src="https://github.com/user-attachments/assets/7b7219eb-3d8c-4bc3-bac0-2998253521ad" width = "900"/>
 </div>
+
+<b>Sniper</b>, <b>Specialist</b> and <b> Caster </b> are the three classes with highest base attack, whereas Medic accounts for the lowest figures (quite reasonable!).
+
+Yet, there are several outliers in <b>Defender</b> and <b>Guard</b> class, indicating that Arknights has some tanks that deal thons of damage! I will clearly show the outlier later on. 
+
 
 
 
