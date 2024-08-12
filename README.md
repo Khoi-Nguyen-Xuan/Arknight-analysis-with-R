@@ -48,8 +48,25 @@ Therefore, I believe a thorough statistical analysis can reveal these patterns a
 
 ## Dataset
 
-The dataset used in this analysis is collected by Victor Soeiro (<strong><a href="https://www.kaggle.com/datasets/victorsoeiro/arknights-operators"> Kaggle </a></strong>). In this dataset, Victor listed all operators playable with their features to analyze the data to find interesting facts. 
+The dataset (<strong><a href="https://www.kaggle.com/datasets/victorsoeiro/arknights-operators"> Kaggle </a></strong>) used in this analysis is collected from <strong><a href="https://arknights.fandom.com/wiki/Arknights_Wiki"> Arknights Fandom Wiki </a></strong> by Victor Soeiro. In this dataset, Victor listed all operators playable with their features to analyze the data to find interesting facts. 
 
-This dataset contains **235 distinct Operators** with over **60 column of stats** of each Operator. Most of the columns are the stats (HP, ATK, DEF, RES, REDEPLOY, DP_COST, BLOCK, INTERVAL) on each classification level (BASE, ELITE 1, ELITE 2, MAX). 
+This dataset contains **235 distinct Operators** with over **60 column of stats** of each Operator. Most of the quantitative variables are the stats (HP, ATK, DEF, RES, REDEPLOY, DP_COST, BLOCK, INTERVAL) on each classification level (BASE, ELITE 1, ELITE 2, MAX). It is important to note that **not all operators** have all three levels of classifications, some only have 2. 
 
-However, it is important to note that **not all operators** have all three levels of classifications, some only have 2. 
+
+Besides, there are numerous categorical variables: 
+- **Name**
+- **Class**: Caster, Defender, Guard, Medic, Sniper, Specialist, Supporter, Vanguard 
+- **Branch**: Each class has different branches)
+- **Availability**: Recruitment, Starting Operator, Headhunting, TR-4, Shop Vouchers Store, Credit Store, Guiding Ahead (Missions of Notaries), ...
+- **Race**
+- **Birthday, place of birth**
+- **Faction**
+- **Stars**: Rarity level (1,2,3,4,5,6)
+- **Position**: Melee or Ranged 
+- **Gender**: Male or Female 
+- **Height**: Measured in cm 
+- **Experience**: Measured in years
+- **Endurance, Combat skill, tactical acumen**: Flawed, Standard, Normal, Excellence
+- **Mobility**: Flawed, Standard, Normal, Excellence 
+- **Infection status**
+
