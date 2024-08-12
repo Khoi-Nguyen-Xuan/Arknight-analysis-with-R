@@ -387,6 +387,26 @@ In Arknights
 - <b>Res (Resistance)</b> reduces the impact of <b>magical damage</b> from enemies, making operators more resilient against magic-based attacks. 
 - <b>Def (Defense)</b> lowers <b>physical damage</b> taken, enhancing an operator's durability against physical assaults.
 
+Notice that there is a very extreme outlier int this scatterplot. I will use annotate() with text, rect and arrow to hightlight the outlier plot
+
+```r
+g+ annotate("rect", xmin = 340, xmax = 368, ymin = 48, ymax = 52, alpha = 0.3, col = "black")+
+  annotate("text", label = "Outlier", x = 280, y = 40, color = "red",size = 5)+
+  annotate("curve", x = 280, y = 41.5, xend = 335, yend = 50, linewidth = 1, curvature = -0.3, arrow = arrow(length = unit(0.5,'cm')))
+```
+![image](https://github.com/user-attachments/assets/30c629a4-d179-4548-987f-d1017cab66f1)
+
+By using dplyr to filter out, we now know that this outlier belongs to <b>THRM-EX </b>, with <b>base def </b> = 50 and <b>base ref </b> = 354. 
+```r
+outlier <- df%>%
+  filter(base_def>300) %>%
+  select(name, base_res, base_def)
+
+View(outlier)
+
+```
+![image](https://github.com/user-attachments/assets/dee6ab14-dcc4-42c8-9a7d-83fae90a7ef2)
+
 
 
 
