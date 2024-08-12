@@ -277,7 +277,15 @@ ggplot(df, aes(x = reorder(class,base_atk,median), y = base_atk))+
 
 Yet, there are several outliers in <b>Defender</b> and <b>Guard</b> class, indicating that Arknights has some tanks that deal tons of damage! 
 
-Let's find out who are them 
+Let's find out who they are 
+
+```r
+outlier_baseATK_defender <- df %>%
+  filter(class == "Defender", base_atk > 400) %>% 
+  select(name, class, base_atk)
+```
+
+
 
 
 
