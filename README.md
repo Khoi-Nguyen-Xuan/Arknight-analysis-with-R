@@ -387,7 +387,7 @@ In Arknights
 - <b>Res (Resistance)</b> reduces the impact of <b>magical damage</b> from enemies, making operators more resilient against magic-based attacks. 
 - <b>Def (Defense)</b> lowers <b>physical damage</b> taken, enhancing an operator's durability against physical assaults.
 
-<br>
+<br></br>
 Since we want to analyse the relationship (correlation) between two quantitative variables, scatterplot is a great choice! 
 
 ```r
@@ -406,7 +406,7 @@ ggplot(df, aes(x = base_def, y = base_res))+
 
 <br>
 
-Notice that there is a very extreme outlier int this scatterplot. I will use annotate() with text, rect and arrow to hightlight the outlier plot
+Notice that there is a <b>very extreme outlier</b> int this scatterplot. I will use annotate() with text, rect and arrow to hightlight the outlier plot
 
 ```r
 g+ annotate("rect", xmin = 340, xmax = 368, ymin = 48, ymax = 52, alpha = 0.3, col = "black")+
