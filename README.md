@@ -275,7 +275,9 @@ ggplot(df, aes(x = reorder(class,base_atk,median), y = base_atk))+
 
 <b>Sniper</b>, <b>Specialist</b> and <b> Caster </b> are the three classes with highest base attack, whereas Medic accounts for the lowest figures (quite reasonable!).
 
-Yet, there are several outliers in <b>Defender</b> and <b>Guard</b> class, indicating that Arknights has some tanks that deal tons of damage! Let's find out who are them 
+Yet, there are several outliers in <b>Defender</b> and <b>Guard</b> class, indicating that Arknights has some tanks that deal tons of damage! 
+
+Let's find out who are them 
 
 
 
