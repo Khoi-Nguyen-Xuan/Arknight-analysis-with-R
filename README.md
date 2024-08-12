@@ -178,10 +178,100 @@ You can see that the data type of these variables are finally fixed!
 
 ![image](https://github.com/user-attachments/assets/2bb0f128-04ff-40fb-8d5c-2b0a8bb2c32c)
 
+<h3> 6. Categorical variable check </h3>
+Just like the qualitative variable, I will check some important categorical variables to figure out whether they are saved in the correct data type. 
+
+```r
+categorical <- df %>% 
+  select(c(name:position, availability, gender:endurance,experience:arts_adaptability ))
+
+categorical_check <- sapply(categorical, class)
+
+View(categorical_check)
+```
+Fortunately, they are! 
+<br></br>
+![image](https://github.com/user-attachments/assets/0ba76012-99a5-4633-8453-9ef4f14c9e87)
+<br> 
+
+<br></br>
+## Heatmap analysis
+
+<h4> 1. Number of operators per class and stars </h4>
+In order to see the distribution of operators per class together with stars, I used <b> the heatmap (bin2d) </b> since the task is counting for two categorical variables. 
+
+```r
+ggplot(df, aes(x = class, y = stars)) +
+  geom_bin2d() +
+  labs(title = "Number of operators per class",
+       subtitle = "2022 version",
+       fill = "Count") +
+  xlab("Class") + ylab("Stars") +
+  scale_fill_paletteer_c("ggthemes::Blue-Teal")+
+  theme(plot.title = element_text(hjust = 0.5, size = 15, face = "bold"),
+        plot.subtitle = element_text(hjust = 0.5, size = 11, face = "italic"),
+        axis.title.x = element_text(size = 13, vjust = -1),
+        axis.title.y = element_text(size = 13, vjust = 3),
+        plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm"),
+        panel.spacing = unit(2, "lines"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())+
+```
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/0db6f79f-f9aa-4278-b9a3-9ed47b73fd39" alt="Arknight cover image" width="800" height = "600"/>
+</div>
 
 
+<br></br>
+I did also add <b> "position" </b>, which is another categorical variable, through facet_grid() for more comprehensive analysis 
 
+<div align="center">
+<img src="https://github.com/user-attachments/assets/c096980c-a895-4df6-b33e-16250d6cfb7e" width="800" height = "600" />
+</div>
 
+<br></br> 
+## Boxplot comparison 
+Boxplots are implemented to compare the qualitative variables (base, elite_1, elite_2, max) among all eight class of operators. 
+
+<h4>1. Base health comparison </h4>
+I reorder the order of class regarding to their base_hp, so that the pattern is easier to recognized. 
+
+```r
+ggplot(df, aes(x = reorder(class,base_hp,mean), y = base_hp))+
+  geom_boxplot(aes(fill = class), alpha = 0.7)+
+  xlab("Class")+ylab("Base health")+ labs(title = "Base Health", fill = "Class")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = 2, face = "bold", size = 13),
+        plot.margin = unit(c(rep(0.6,4)),"cm"),
+        axis.title.x = element_text(vjust = -2),
+        axis.title.y = element_text(vjust = 3))+
+  scale_y_continuous(limits = c(min(df$base_hp)*1.1, max(df$base_hp)*1.1))
+```
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/7660b7d9-e95b-4230-bec7-56bc078bebc9" width = "900"/>
+</div>
+
+It is reasonable that defender and guard are the two classes with highest base_hp. However, I notice some outliers in the Caster class, which I will point out later on. 
+
+<h4>2. Base attack comparison </h4>
+Now let's take a look at the base atk between 8 classes. 
+
+```r
+ggplot(df, aes(x = reorder(class,base_atk,median), y = base_atk))+
+  geom_boxplot(aes(fill = class), alpha = 0.7)+
+  xlab("Class")+ylab("Base attack")+ labs(title = "Base Attack", fill = "Class")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = 2, face = "bold", size = 13),
+        plot.margin = unit(c(rep(0.6,4)),"cm"),
+        axis.title.x = element_text(vjust = -2),
+        axis.title.y = element_text(vjust = 3))+
+  scale_y_continuous(limits = c(min(df$base_atk)*1.1, max(df$base_atk)*1.1))+
+  stat_summary(fun.data = get_box_stats_atk, geom = "text", hjust = 0.5, vjust = 0.9, size = 3)
+```
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/7b7219eb-3d8c-4bc3-bac0-2998253521ad" width = "900"/>
+</div>
 
 
 
