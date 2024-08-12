@@ -386,7 +386,6 @@ According to the graph, while <b>Guard</b> and <b>Specialist</b> possess a great
 In Arknights
 - <b>Res (Resistance)</b> reduces the impact of <b>magical damage</b> from enemies, making operators more resilient against magic-based attacks. 
 - <b>Def (Defense)</b> lowers <b>physical damage</b> taken, enhancing an operator's durability against physical assaults.
-
 <br></br>
 Since we want to analyse the relationship (correlation) between two quantitative variables, scatterplot is a great choice! 
 
@@ -406,7 +405,7 @@ ggplot(df, aes(x = base_def, y = base_res))+
 
 <br>
 
-Notice that there is a <b>very extreme outlier</b> int this scatterplot. I will use annotate() with text, rect and arrow to hightlight the outlier plot
+Notice that there is a <b>very extreme outlier</b> int this scatterplot. I will use <b>annotate()</b> with text, rect and arrow to hightlight the outlier plot
 
 ```r
 g+ annotate("rect", xmin = 340, xmax = 368, ymin = 48, ymax = 52, alpha = 0.3, col = "black")+
@@ -420,7 +419,7 @@ g+ annotate("rect", xmin = 340, xmax = 368, ymin = 48, ymax = 52, alpha = 0.3, c
 
 
 <br></br> 
-By using dplyr to filter out, we know that this outlier belongs to <b>THRM-EX </b>, with <b>base def </b> = 50 and <b>base ref </b> = 354. 
+By using dplyr to filter out, we know that this outlier belongs to <b>THRM-EX </b>, with <b>base def = 50 </b> and <b>base ref = 354 </b>. 
 ```r
 outlier <- df%>%
   filter(base_def>300) %>%
