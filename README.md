@@ -290,7 +290,7 @@ outlier_baseATK<- df %>%
 
 <br></br>
 ## Multiple bar charts for branches
-<h4> Branch terminology </h4>
+<h4> 1. Branch terminology </h4>
 Each class in Arknights is divided into several <b> branches </b> (can be seen as subclass), with each branch providing distinct features that cater to different tactical needs. These branches allow operators to evolve into specialized units, enhancing their effectiveness in various scenarios and adding significant strategic depth to the game's gameplay. 
 
 For instance, the <b>Caster class</b> features two main branches: <b>Core</b> and <b>Splash</b>. The <b>Core</b> branch focuses on high single-target magical damage, excelling in dealing significant damage to individual enemies. In contrast, the <b>Splash</b> branch specializes in area-of-effect (AoE) magic attacks, allowing operators to inflict damage on multiple enemies within a specified area. 
@@ -298,7 +298,7 @@ For instance, the <b>Caster class</b> features two main branches: <b>Core</b> an
 This makes the <b>Core</b> branch ideal for taking down **high-priority** targets, while the **Splash** branch is more suited for managing **large groups of foes**.
 <br></br> 
 
-<h4> Multiple bar charts</h4>
+<h4> 2. Multiple bar charts</h4>
 
 First, I used **dplyr** and** ggplot** to draw seperate individual bar charts for each class. Then, I have implemented the <b>grid.arrange() </b> from <b>gridExtra</b> library to display multiple bar charts in one frame. This give a comprehensive clearer obseravation how each class distribute their branches. 
 
