@@ -463,9 +463,13 @@ In Arknights, operators undergo a classification system. Each classification ste
   <i><b>Range stats differences by levels</b></i>
 </div>
 
+<br></br>
 It is quite reasonable to predict that the operators stats will be **increased** at the next levels of classification. By implementing a scatterplot, I will test whether this statement is statistically correct. 
 
+Let's have a look at the health stats of base and elite 1. 
+
 ```r
+#Correlation between base health and elite 1 health
 ggplot(df, aes(x= base_hp, y = elite_1_hp))+
   geom_point(aes(color = class), size = 2)+ 
   geom_smooth(method = "lm", se = FALSE, colour = "black", size = 0.7)+
@@ -495,6 +499,7 @@ ggplot(df, aes(x= base_hp, y = elite_1_hp))+
 <img src="https://github.com/user-attachments/assets/4db76abd-6668-421f-9e34-e9c53df97f2c" width = "800" height = "600"/>
 </div>
 
+Nice! From the graph, it is obvious that there is a nearly perfect linear relationship (**Pearson correlation coeffficient : 0.99**) between base 1 and elite 1 stats for health. 
 
 
 
