@@ -667,7 +667,7 @@ res <- ggplot(df, aes(x= base_res, y = elite_1_res))+
 
 Great! Now we can observe many individual point without being overlayed on top of each other. Also, since many operators do not have any **res** stats, many points are <b>clustered</b> around the (0,0) position in the **res** scattorplot! 
 
-
+As can be seen from the multiple scatterplots, there is a **perfect linear relationship** (Pearson coefficient = 1) between base stats and elite 1 stats. This mean upgrading operatos to the next level will boost their stats significantly! 
 
 
   
