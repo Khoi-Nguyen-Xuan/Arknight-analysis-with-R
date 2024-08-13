@@ -444,18 +444,59 @@ View(outlier)
 ![image](https://github.com/user-attachments/assets/dee6ab14-dcc4-42c8-9a7d-83fae90a7ef2)
 
 
-<h3> 2. Base, Elite 1, Elite 2 and max </h3>
+<br></br>
+<h3> 2. Base, Elite 1, Elite 2 analysis </h3>
 <b>Terminology </b>
+
 In Arknights, operators undergo a classification system. Each classification step involves specific resources and upgrades, reflecting the operator's growth and specialization. This includes: 
-- <b> Base level</b> : operators start with their fundamental stats and abilities. 
+
+- <b> Base level</b> : operators start with their fundamental stats and abilities.
+  
 - <b> Elite 1 level </b> : enhances their stats and unlocks new skills or upgrades existing ones, allowing for better performance and versatility in battles.
+  
 - <b> Elite 2 level </b> : provides the <b> highest tier</b> of stat boosts and additional skill enhancements, thus maximizing their potential and effectiveness. 
 
+<br>
 <div align="center">
-<img src= "https://github.com/user-attachments/assets/71c0ab5f-93a3-478e-be2d-15e160db06be"/>
-/>
-  <i><br>Range stats differences by levels</br></i>
+<img src= "https://github.com/user-attachments/assets/71c0ab5f-93a3-478e-be2d-15e160db06be"  width = "800" height = "600"/>
+  
+  <i><b>Range stats differences by levels</b></i>
 </div>
+
+It is quite reasonable to predict that the operators stats will be **increased** at the next levels of classification. By implementing a scatterplot, I will test whether this statement is statistically correct. 
+
+```r
+ggplot(df, aes(x= base_hp, y = elite_1_hp))+
+  geom_point(aes(color = class), size = 2)+ 
+  geom_smooth(method = "lm", se = FALSE, colour = "black", size = 0.7)+
+  labs(title = "Health: Base vs elite 1", colour = "Class")+
+  xlab("Base health")+ ylab("Elite 1 health")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = 2, face = "bold", size = 13),
+        plot.margin = unit(c(rep(0.6,4)), "cm"), 
+        axis.title.x = element_text(vjust=-2),
+        axis.title.y = element_text(vjust=2.5))+
+  annotate(
+    "text", 
+    x = Inf, y = Inf, 
+    label = paste("Correlation (Pearson):", round(correlation, 2)),
+    hjust = 2.3, vjust = 3.3, 
+    size = 5, color = "blue"
+  )+ 
+  scale_x_continuous(
+  breaks = seq(0, 3000, by = 300), 
+  labels = seq(0, 3000, by = 300)
+  ) +
+  scale_y_continuous(
+    breaks = seq(0, 3000, by = 300),  
+    labels = seq(0, 3000, by = 300)  
+  ) 
+```
+<div align="center">
+<img src="https://github.com/user-attachments/assets/4db76abd-6668-421f-9e34-e9c53df97f2c" width = "800" height = "600"/>
+</div>
+
+
+
 
 
 
