@@ -12,6 +12,7 @@
 </p>
 </div>
 
+<br></br>
 
 
 ## Contents
@@ -25,6 +26,8 @@
 - [Multiple Bar Charts for branches](#multiple-bar-charts-for-branches)
 - [Scatterplot for Linear Relationship Analysis](#scatterplot-for-linear-relationship-analysis)
 - [References](#references)
+
+<br></br>
 
 
 ## About
