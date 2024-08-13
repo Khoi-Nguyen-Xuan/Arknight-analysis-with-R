@@ -35,7 +35,7 @@ Arknights has been one of the most popular mobile tower defense games for the pa
 
 
 ## Motivation 
-Arknights features a large and diverse roster of operators, each with unique statistics, roles, rarity levels, and even story behind. This variety makes the game complex and dynamic, presenting numerous patterns and distributions among characters.
+Arknights features a large and diverse roster of operators, each with unique statistics, roles, rarity levels, and even story behind. This variety makes the game complex and dynamic, presenting **numerous patterns and distributions** among characters.
 
 
 <div align="center">
