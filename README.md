@@ -662,7 +662,7 @@ res <- ggplot(df, aes(x= base_res, y = elite_1_res))+
 ```
 <br></br> 
 
-![image](https://github.com/user-attachments/assets/f6271e7d-3323-475e-a3ba-05daabace267)
+![image](https://github.com/user-attachments/assets/1443f9e5-b853-4c2f-8236-088e0957730d)
 
 
 Great! Now we can observe many individuals point without being overlayed on top of each other. Also, since many operators do not have any **res** stats, many points are <b>clustered</b> around the (0,0) position in the **res** scattorplot! 
