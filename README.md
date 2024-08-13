@@ -469,7 +469,10 @@ It is quite reasonable to predict that the operators stats will be **increased**
 Let's have a look at the health stats of base and elite 1. 
 
 ```r
-#Correlation between base health and elite 1 health
+#Calculate pearson correlation 
+correlation <- cor(df$base_hp, df$elite_1_hp, method = "pearson")
+
+#Scatterplot between base health and elite 1 health
 ggplot(df, aes(x= base_hp, y = elite_1_hp))+
   geom_point(aes(color = class), size = 2)+ 
   geom_smooth(method = "lm", se = FALSE, colour = "black", size = 0.7)+
@@ -499,7 +502,145 @@ ggplot(df, aes(x= base_hp, y = elite_1_hp))+
 <img src="https://github.com/user-attachments/assets/4db76abd-6668-421f-9e34-e9c53df97f2c" width = "800" height = "600"/>
 </div>
 
-Nice! From the graph, it is obvious that there is a nearly perfect linear relationship (**Pearson correlation coeffficient : 0.99**) between base 1 and elite 1 stats for health. 
+Nice! From the graph, it is obvious that there is a nearly perfect linear relationship (**Pearson correlation coeffficient : 0.99**) between base 1 and elite 1 stats for health.  
+
+Now, let's plot **multiple** scatterplots for other stats in one frame. 
+
+
+Attack correlation
+
+```r
+
+correlation <- cor(df$base_atk, df$elite_1_atk, method = "pearson")
+
+atk <- ggplot(df, aes(x= base_atk, y = elite_1_atk))+
+  geom_point(aes(color = class), size = 2)+ 
+  geom_smooth(method = "lm", se = FALSE, colour = "black", size = 0.7)+
+  labs(title = "Attack: Base vs elite 1", colour = "Class")+
+  xlab("Base attack")+ ylab("Elite 1 attack")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = 2, face = "bold", size = 13),
+        plot.margin = unit(c(rep(0.6,4)), "cm"), 
+        axis.title.x = element_text(vjust=-2),
+        axis.title.y = element_text(vjust=2.5))+
+  annotate(
+    "text", 
+    x = Inf, y = Inf, 
+    label = paste("Correlation (Pearson):", round(correlation, 2)),
+    hjust = 2.3, vjust = 3.3, 
+    size = 5, color = "blue"
+  )+ 
+  scale_x_continuous(
+    breaks = seq(0, 3000, by = 300), 
+    labels = seq(0, 3000, by = 300)
+  ) +
+  scale_y_continuous(
+    breaks = seq(0, 3000, by = 300),  
+    labels = seq(0, 3000, by = 300)  
+  )
+```
+
+Defend correlation 
+```r
+
+
+correlation <- cor(df$base_def, df$elite_1_def, method = "pearson")
+
+def<- ggplot(df, aes(x= base_def, y = elite_1_def))+
+  geom_point(aes(color = class), size = 2)+ 
+  geom_smooth(method = "lm", se = FALSE, colour = "black", size = 0.7)+
+  labs(title = "Defend: Base vs elite 1", colour = "Class")+
+  xlab("Base defend")+ ylab("Elite 1 defend")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = 2, face = "bold", size = 13),
+        plot.margin = unit(c(rep(0.6,4)), "cm"), 
+        axis.title.x = element_text(vjust=-2),
+        axis.title.y = element_text(vjust=2.5))+
+  annotate(
+    "text", 
+    x = Inf, y = Inf, 
+    label = paste("Correlation (Pearson):", round(correlation, 2)),
+    hjust = 2.3, vjust = 3.3, 
+    size = 5, color = "blue"
+  )+ 
+  scale_x_continuous(
+    breaks = seq(0, 3000, by = 300), 
+    labels = seq(0, 3000, by = 300)
+  ) +
+  scale_y_continuous(
+    breaks = seq(0, 3000, by = 300),  
+    labels = seq(0, 3000, by = 300)  
+  )
+```
+
+Resistance correlation
+
+```r
+
+correlation <- cor(df$base_res, df$elite_1_res, method = "pearson")
+
+res <- ggplot(df, aes(x= base_res, y = elite_1_res))+
+  geom_point(aes(color = class), size = 2)+ 
+  geom_smooth(method = "lm", se = FALSE, colour = "black", size = 0.7)+
+  labs(title = "Resistance: Base vs elite 1", colour = "Class")+
+  xlab("Base resistance")+ ylab("Elite 1 resistance")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = 2, face = "bold", size = 13),
+        plot.margin = unit(c(rep(0.6,4)), "cm"), 
+        axis.title.x = element_text(vjust=-2),
+        axis.title.y = element_text(vjust=2.5))+
+  annotate(
+    "text", 
+    x = Inf, y = Inf, 
+    label = paste("Correlation (Pearson):", round(correlation, 2)),
+    hjust = 2.3, vjust = 3.3, 
+    size = 5, color = "blue"
+  )+ 
+  scale_x_continuous(
+    breaks = seq(0, 3000, by = 300), 
+    labels = seq(0, 3000, by = 300)
+  ) +
+  scale_y_continuous(
+    breaks = seq(0, 3000, by = 300),  
+    labels = seq(0, 3000, by = 300)  
+  )
+```
+
+Redeploy correlation
+
+```r
+
+
+correlation <- cor(df$base_redeploy, df$elite_1_redeploy, method = "pearson")
+
+redeploy <- ggplot(df, aes(x= base_redeploy, y = elite_1_redeploy))+
+  geom_point(aes(color = class), size = 2)+ 
+  geom_smooth(method = "lm", se = FALSE, colour = "black", size = 0.7)+
+  labs(title = "Redeploy: Base vs elite 1", colour = "Class")+
+  xlab("Base redeploy")+ ylab("Elite 1 redeploy")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = 2, face = "bold", size = 13),
+        plot.margin = unit(c(rep(0.6,4)), "cm"), 
+        axis.title.x = element_text(vjust=-2),
+        axis.title.y = element_text(vjust=2.5))+
+  annotate(
+    "text", 
+    x = Inf, y = Inf, 
+    label = paste("Correlation (Pearson):", round(correlation, 2)),
+    hjust = 2.3, vjust = 3.3, 
+    size = 5, color = "blue"
+  )+ 
+  scale_x_continuous(
+    breaks = seq(0, 3000, by = 300), 
+    labels = seq(0, 3000, by = 300)
+  ) +
+  scale_y_continuous(
+    breaks = seq(0, 3000, by = 300),  
+    labels = seq(0, 3000, by = 300)  
+  )
+```
+
+
+
+
+
+  
 
 
 
