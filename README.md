@@ -19,11 +19,11 @@
 - [About](#about)
 - [Motivation](#motivation)
 - [Dataset](#dataset)
-- [Data preprocessing](#Cleaning) 
-- [Heatmap for correlation analysis](#heatmap)
-- [Boxplot for comparison](#Boxplot)
-- [Multiple bar charts for summary](#BarCharts)
-- [Scatterplot for linear relationship analysis](#Scatterplot)
+- [Data Preprocessing](#data-preprocessing)
+- [Heatmap for Correlation Analysis](#heatmap-for-correlation-analysis)
+- [Boxplot for Comparison](#boxplot-for-comparison)
+- [Multiple Bar Charts for Summary](#multiple-bar-charts-for-summary)
+- [Scatterplot for Linear Relationship Analysis](#scatterplot-for-linear-relationship-analysis)
 - [References](#references)
 
 
