@@ -558,7 +558,7 @@ Resistance correlation
 correlation <- cor(df$base_res, df$elite_1_res, method = "pearson")
 
 res <- ggplot(df, aes(x= base_res, y = elite_1_res))+
-  geom_jitter(aes(color = class), size = 2)+ 
+  geom_point(aes(color = class), size = 2)+ 
   geom_smooth(method = "lm", se = FALSE, colour = "black", size = 0.7)+
   labs(title = "Resistance: Base vs elite 1", colour = "Class")+
   xlab("Base resistance")+ ylab("Elite 1 resistance")+
@@ -583,7 +583,7 @@ Cost correlation
 correlation <- cor(df$base_dp_cost, df$elite_1_dp_cost, method = "pearson")
 
 cost <- ggplot(df, aes(x= base_dp_cost, y = elite_1_dp_cost))+
-  geom_jitter(aes(color = class), size = 2)+ 
+  geom_point(aes(color = class), size = 2)+ 
   geom_smooth(method = "lm", se = FALSE, colour = "black", size = 0.7)+
   labs(title = "Cost: Base vs elite 1", colour = "Class")+
   xlab("Base cost")+ ylab("Elite 1 cost")+
@@ -610,6 +610,57 @@ g <- grid.arrange(atk, def, res, cost, nrow=2, top = textGrob("Base vs Elite 1",
 ```
 
 ![image](https://github.com/user-attachments/assets/abbe00f7-8c86-46e7-a400-6ab83498731f)
+
+
+WAIT! The **resistance** and the **cost** scatterplots look ... quite **weird**, why there are just a few points on their scatterplots. To understand what happens in the graphs, let's have a closer look at thesse stats. 
+
+![image](https://github.com/user-attachments/assets/3d52f57c-4567-4ef5-a4aa-90d714f317a6)
+
+The underlying reason is simply because many operators **share the same pair of stats** ! Especially for the **res** stats, many operators **do not** even possess any **art resistance**. This would inevitably lead to **overlaying points** in the scatterplots. 
+
+We can solve this problem by implementing **jitter**, instead of using **point**. **Jitter** will add a small amount of **random noise** to the data points, which helps to spread out overlapping points, making individual values more visible. 
+
+```r
+cost <- ggplot(df, aes(x= base_dp_cost, y = elite_1_dp_cost))+
+  geom_jitter(aes(color = class), size = 2)+ 
+  geom_smooth(method = "lm", se = FALSE, colour = "black", size = 0.7)+
+  labs(title = "Cost: Base vs elite 1", colour = "Class")+
+  xlab("Base cost")+ ylab("Elite 1 cost")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = 2, face = "bold", size = 13),
+        plot.margin = unit(c(rep(0.6,4)), "cm"), 
+        axis.title.x = element_text(vjust=-2),
+        axis.title.y = element_text(vjust=2.5))+
+  annotate(
+    "text", 
+    x = Inf, y = Inf, 
+    label = paste("Correlation (Pearson):", round(correlation, 2)),
+    hjust = 2.3, vjust = 3.3, 
+    size = 3, color = "blue"
+  )
+```
+
+```r
+res <- ggplot(df, aes(x= base_res, y = elite_1_res))+
+  geom_jitter(aes(color = class), size = 2)+ 
+  geom_smooth(method = "lm", se = FALSE, colour = "black", size = 0.7)+
+  labs(title = "Resistance: Base vs elite 1", colour = "Class")+
+  xlab("Base resistance")+ ylab("Elite 1 resistance")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = 2, face = "bold", size = 13),
+        plot.margin = unit(c(rep(0.6,4)), "cm"), 
+        axis.title.x = element_text(vjust=-2),
+        axis.title.y = element_text(vjust=2.5))+
+  annotate(
+    "text", 
+    x = Inf, y = Inf, 
+    label = paste("Correlation (Pearson):", round(correlation, 2)),
+    hjust = 2.3, vjust = 3.3, 
+    size = 3, color = "blue"
+  )
+```
+
+![image](https://github.com/user-attachments/assets/7b02bf00-7374-46bc-8f15-e5eb7f6808c2)
+
+Great! Now we can observe many individuals point without being overlayed on top of each other. Also, since many operators do not have any **res** stats, many points are clustered around the (0,0) position in the **res** scattorplot! 
 
 
 
