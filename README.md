@@ -464,7 +464,7 @@ In Arknights, operators undergo a classification system. Each classification ste
 </div>
 
 <br></br>
-It is quite reasonable to predict that the operators stats will be **increased** at the next levels of classification. By implementing a scatterplot, I will test whether this statement is statistically correct. 
+It is quite reasonable to predict that the operators stats will **increase** at the next levels of classification. By implementing a scatterplot, I will test whether this statement is statistically correct. 
 
 Let's have a look at the health stats of base and elite 1. 
 
@@ -665,7 +665,7 @@ res <- ggplot(df, aes(x= base_res, y = elite_1_res))+
 ![image](https://github.com/user-attachments/assets/1443f9e5-b853-4c2f-8236-088e0957730d)
 
 
-Great! Now we can observe many individuals point without being overlayed on top of each other. Also, since many operators do not have any **res** stats, many points are <b>clustered</b> around the (0,0) position in the **res** scattorplot! 
+Great! Now we can observe many individual point without being overlayed on top of each other. Also, since many operators do not have any **res** stats, many points are <b>clustered</b> around the (0,0) position in the **res** scattorplot! 
 
 
 
