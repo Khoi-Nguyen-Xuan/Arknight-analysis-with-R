@@ -444,7 +444,18 @@ View(outlier)
 ![image](https://github.com/user-attachments/assets/dee6ab14-dcc4-42c8-9a7d-83fae90a7ef2)
 
 
+<h3> 2. Base, Elite 1, Elite 2 and max </h3>
+<b>Terminology </b>
+In Arknights, operators undergo a classification system. Each classification step involves specific resources and upgrades, reflecting the operator's growth and specialization. This includes: 
+- <b> Base level</b> : operators start with their fundamental stats and abilities. 
+- <b> Elite 1 level </b> : enhances their stats and unlocks new skills or upgrades existing ones, allowing for better performance and versatility in battles.
+- <b> Elite 2 level </b> : provides the <b> highest tier</b> of stat boosts and additional skill enhancements, thus maximizing their potential and effectiveness. 
 
+<div align="center">
+<img src= "https://github.com/user-attachments/assets/71c0ab5f-93a3-478e-be2d-15e160db06be"/>
+/>
+  <i><br>Range stats differences by levels</br></i>
+</div>
 
 
 
