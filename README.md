@@ -612,7 +612,10 @@ g <- grid.arrange(atk, def, res, cost, nrow=2, top = textGrob("Base vs Elite 1",
 ![image](https://github.com/user-attachments/assets/abbe00f7-8c86-46e7-a400-6ab83498731f)
 
 
-WAIT! The **resistance** and the **cost** scatterplots look ... quite **weird**, why there are just a few points on their scatterplots. To understand what happens in the graphs, let's have a closer look at thesse stats. 
+<br>
+WAIT!  <br> </br>
+
+The **resistance** and the **cost** scatterplots look ... quite **weird**, why there are just a few points on their scatterplots. To understand what happens in the graphs, let's have a closer look at thesse stats. 
 
 ![image](https://github.com/user-attachments/assets/3d52f57c-4567-4ef5-a4aa-90d714f317a6)
 
@@ -657,10 +660,12 @@ res <- ggplot(df, aes(x= base_res, y = elite_1_res))+
     size = 3, color = "blue"
   )
 ```
+<br></br> 
 
-![image](https://github.com/user-attachments/assets/7b02bf00-7374-46bc-8f15-e5eb7f6808c2)
+![image](https://github.com/user-attachments/assets/f6271e7d-3323-475e-a3ba-05daabace267)
 
-Great! Now we can observe many individuals point without being overlayed on top of each other. Also, since many operators do not have any **res** stats, many points are clustered around the (0,0) position in the **res** scattorplot! 
+
+Great! Now we can observe many individuals point without being overlayed on top of each other. Also, since many operators do not have any **res** stats, many points are <b>clustered</b> around the (0,0) position in the **res** scattorplot! 
 
 
 
