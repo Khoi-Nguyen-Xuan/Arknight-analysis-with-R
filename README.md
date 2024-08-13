@@ -510,7 +510,6 @@ Now, let's plot **multiple** scatterplots for other stats in one frame.
 Attack correlation
 
 ```r
-
 correlation <- cor(df$base_atk, df$elite_1_atk, method = "pearson")
 
 atk <- ggplot(df, aes(x= base_atk, y = elite_1_atk))+
@@ -527,25 +526,15 @@ atk <- ggplot(df, aes(x= base_atk, y = elite_1_atk))+
     x = Inf, y = Inf, 
     label = paste("Correlation (Pearson):", round(correlation, 2)),
     hjust = 2.3, vjust = 3.3, 
-    size = 5, color = "blue"
-  )+ 
-  scale_x_continuous(
-    breaks = seq(0, 3000, by = 300), 
-    labels = seq(0, 3000, by = 300)
-  ) +
-  scale_y_continuous(
-    breaks = seq(0, 3000, by = 300),  
-    labels = seq(0, 3000, by = 300)  
+    size = 3, color = "blue"
   )
 ```
 
 Defend correlation 
 ```r
-
-
 correlation <- cor(df$base_def, df$elite_1_def, method = "pearson")
 
-def<- ggplot(df, aes(x= base_def, y = elite_1_def))+
+def <- ggplot(df, aes(x= base_def, y = elite_1_def))+
   geom_point(aes(color = class), size = 2)+ 
   geom_smooth(method = "lm", se = FALSE, colour = "black", size = 0.7)+
   labs(title = "Defend: Base vs elite 1", colour = "Class")+
@@ -559,26 +548,17 @@ def<- ggplot(df, aes(x= base_def, y = elite_1_def))+
     x = Inf, y = Inf, 
     label = paste("Correlation (Pearson):", round(correlation, 2)),
     hjust = 2.3, vjust = 3.3, 
-    size = 5, color = "blue"
-  )+ 
-  scale_x_continuous(
-    breaks = seq(0, 3000, by = 300), 
-    labels = seq(0, 3000, by = 300)
-  ) +
-  scale_y_continuous(
-    breaks = seq(0, 3000, by = 300),  
-    labels = seq(0, 3000, by = 300)  
+    size = 3, color = "blue"
   )
 ```
 
 Resistance correlation
 
 ```r
-
 correlation <- cor(df$base_res, df$elite_1_res, method = "pearson")
 
 res <- ggplot(df, aes(x= base_res, y = elite_1_res))+
-  geom_point(aes(color = class), size = 2)+ 
+  geom_jitter(aes(color = class), size = 2)+ 
   geom_smooth(method = "lm", se = FALSE, colour = "black", size = 0.7)+
   labs(title = "Resistance: Base vs elite 1", colour = "Class")+
   xlab("Base resistance")+ ylab("Elite 1 resistance")+
@@ -591,30 +571,22 @@ res <- ggplot(df, aes(x= base_res, y = elite_1_res))+
     x = Inf, y = Inf, 
     label = paste("Correlation (Pearson):", round(correlation, 2)),
     hjust = 2.3, vjust = 3.3, 
-    size = 5, color = "blue"
-  )+ 
-  scale_x_continuous(
-    breaks = seq(0, 3000, by = 300), 
-    labels = seq(0, 3000, by = 300)
-  ) +
-  scale_y_continuous(
-    breaks = seq(0, 3000, by = 300),  
-    labels = seq(0, 3000, by = 300)  
+    size = 3, color = "blue"
   )
 ```
 
-Redeploy correlation
+Cost correlation
 
 ```r
+### dp cost correlation
 
+correlation <- cor(df$base_dp_cost, df$elite_1_dp_cost, method = "pearson")
 
-correlation <- cor(df$base_redeploy, df$elite_1_redeploy, method = "pearson")
-
-redeploy <- ggplot(df, aes(x= base_redeploy, y = elite_1_redeploy))+
-  geom_point(aes(color = class), size = 2)+ 
+cost <- ggplot(df, aes(x= base_dp_cost, y = elite_1_dp_cost))+
+  geom_jitter(aes(color = class), size = 2)+ 
   geom_smooth(method = "lm", se = FALSE, colour = "black", size = 0.7)+
-  labs(title = "Redeploy: Base vs elite 1", colour = "Class")+
-  xlab("Base redeploy")+ ylab("Elite 1 redeploy")+
+  labs(title = "Cost: Base vs elite 1", colour = "Class")+
+  xlab("Base cost")+ ylab("Elite 1 cost")+
   theme(plot.title = element_text(hjust = 0.5, vjust = 2, face = "bold", size = 13),
         plot.margin = unit(c(rep(0.6,4)), "cm"), 
         axis.title.x = element_text(vjust=-2),
@@ -624,18 +596,20 @@ redeploy <- ggplot(df, aes(x= base_redeploy, y = elite_1_redeploy))+
     x = Inf, y = Inf, 
     label = paste("Correlation (Pearson):", round(correlation, 2)),
     hjust = 2.3, vjust = 3.3, 
-    size = 5, color = "blue"
-  )+ 
-  scale_x_continuous(
-    breaks = seq(0, 3000, by = 300), 
-    labels = seq(0, 3000, by = 300)
-  ) +
-  scale_y_continuous(
-    breaks = seq(0, 3000, by = 300),  
-    labels = seq(0, 3000, by = 300)  
+    size = 3, color = "blue"
   )
 ```
 
+Thanks to the **gridExtra** library, we can use the **gridArrange()** to combine and display 4 scatterplots at the same time! 
+
+```r
+library(gridExtra) 
+library(grid)
+
+g <- grid.arrange(atk, def, res, cost, nrow=2, top = textGrob("Base vs Elite 1", gp = gpar(fontsize = 17, font = 2)))
+```
+
+![image](https://github.com/user-attachments/assets/abbe00f7-8c86-46e7-a400-6ab83498731f)
 
 
 
