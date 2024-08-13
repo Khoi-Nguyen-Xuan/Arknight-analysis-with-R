@@ -12,8 +12,6 @@
 </p>
 </div>
 
-<br></br>
-
 
 ## Contents
 
@@ -35,7 +33,7 @@ This is a **statistical analysis** of an Arknight characters dataset from <stron
 
 Arknights has been one of the most popular mobile tower defense games for the past 5 years. This Japanese game combines strategic gameplay with a compelling narrative and a rich roster of unique operators.
 
-
+<br></br>
 
 ## Motivation 
 Arknights features a large and diverse roster of operators, each with unique statistics, roles, rarity levels, and even story behind. This variety makes the game complex and dynamic, presenting **numerous patterns and distributions** among characters.
