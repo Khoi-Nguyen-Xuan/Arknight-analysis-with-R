@@ -599,7 +599,7 @@ cost <- ggplot(df, aes(x= base_dp_cost, y = elite_1_dp_cost))+
     size = 3, color = "blue"
   )
 ```
-
+<br></br>
 Thanks to the **gridExtra** library, we can use the **gridArrange()** to combine and display 4 scatterplots at the same time! 
 
 ```r
