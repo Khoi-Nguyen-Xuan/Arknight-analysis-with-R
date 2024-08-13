@@ -22,7 +22,7 @@
 - [Data Preprocessing](#data-preprocessing)
 - [Heatmap for Correlation Analysis](#heatmap-for-correlation-analysis)
 - [Boxplot for Comparison](#boxplot-for-comparison)
-- [Multiple Bar Charts for Summary](#multiple-bar-charts-for-summary)
+- [Multiple Bar Charts for branches](#multiple-bar-charts-for-branches)
 - [Scatterplot for Linear Relationship Analysis](#scatterplot-for-linear-relationship-analysis)
 - [References](#references)
 
@@ -194,7 +194,7 @@ Fortunately, they are!
 ![image](https://github.com/user-attachments/assets/0ba76012-99a5-4633-8453-9ef4f14c9e87)
 
 <br></br>
-## Heatmap analysis
+## Heatmap for Correlation Analysis
 
 <h4> 1. Number of operators per class and stars </h4>
 In order to see the distribution of operators per class together with stars, I used <b> the heatmap (bin2d) </b> since the task is counting for two categorical variables. 
@@ -230,7 +230,7 @@ I did also add <b> "position" </b>, which is another categorical variable, throu
 </div>
 
 <br></br> 
-## Boxplot comparison 
+## Boxplot for Comparison
 Boxplots are implemented to compare the qualitative variables (base, elite_1, elite_2, max) among all eight class of operators. 
 
 <h4>1. Base health comparison </h4>
@@ -288,7 +288,7 @@ outlier_baseATK<- df %>%
 ![image](https://github.com/user-attachments/assets/33963448-e457-43af-81ef-421e4ccd7688)
 
 <br></br>
-## Multiple bar charts for branches
+## Multiple Bar Charts for branches
 <h4> 1. Branch terminology </h4>
 Each class in Arknights is divided into several <b> branches </b> (can be seen as subclass), with each branch providing distinct features that cater to different tactical needs. These branches allow operators to evolve into specialized units, enhancing their effectiveness in various scenarios and adding significant strategic depth to the game's gameplay. 
 
@@ -381,7 +381,7 @@ According to the graph, while <b>Guard</b> and <b>Specialist</b> possess a great
 ![Rplot](https://github.com/user-attachments/assets/cf759f5b-6793-4a59-9ee9-bff348b468c8)
 
 <br></br>
-## Scatterplot for relationship analysis (with Pearson correlation coefficient)
+## Scatterplot for Linear Relationship Analysis
 <h3> 1. Def and res analysis </h3>
 
 In Arknights : 
